@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="393.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="Search Username:">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtUsernameSearch" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnNewUser" mnemonicParsing="false" text="New User" GridPane.columnIndex="1" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <TableView fx:id="tblUsers" prefHeight="300.0">
+                <placeholder>
+                    <Label>No users found</Label>
+                </placeholder>
+              <columns>
+                <TableColumn fx:id="tblUsersColId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="tblUsersColUsername" prefWidth="140.0" text="Username" />
+                  <TableColumn fx:id="tblUsersColShift" prefWidth="140.0" text="Shift" />
+                  <TableColumn fx:id="tblUsersColDepartment" prefWidth="140.0" text="Department" />
+                  <TableColumn fx:id="tblUsersColPermissionLevel" prefWidth="100.0" text="Permission Level" />
+                  <TableColumn fx:id="tblUsersColPasswordChange" prefWidth="170.0" text="Requires Password Change" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <Button fx:id="btnClose" mnemonicParsing="false" text="Close" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

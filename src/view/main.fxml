@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="385.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <MenuBar fx:id="menuBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="menuNewTurnover" mnemonicParsing="false" text="New Turnover" />
+         <MenuItem fx:id="menuLogout" mnemonicParsing="false" text="Logout" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <Menu fx:id="menuSettings" disable="true" mnemonicParsing="false" text="Settings">
+                <MenuItem fx:id="menuManageUsers" mnemonicParsing="false" text="Mange Users" />
+                <MenuItem fx:id="menuManageCategories" mnemonicParsing="false" text="Manage Categories / Subcategories" />
+                <MenuItem fx:id="menuManageDepartments" mnemonicParsing="false" text="Manage Departments" />
+                <MenuItem fx:id="menuManageShifts" mnemonicParsing="false" text="Manage Shifts" />
+            </Menu>
+        </Menu>
+        <Menu mnemonicParsing="false" text="View">
+            <MenuItem fx:id="menuReport" mnemonicParsing="false" text="Shift Report" />
+        </Menu>
+    </MenuBar>
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+        <HBox>
+            <Label prefWidth="80.0" text="Start Date:">
+                <padding>
+                    <Insets top="4.0" />
+                </padding>
+                <HBox.margin>
+                    <Insets right="5.0" />
+                </HBox.margin>
+            </Label>
+            <DatePicker fx:id="pickerStart" prefWidth="120.0">
+                <HBox.margin>
+                    <Insets right="20.0" />
+                </HBox.margin>
+            </DatePicker>
+            <Label text="End Date:">
+                <padding>
+                    <Insets top="4.0" />
+                </padding>
+                <HBox.margin>
+                    <Insets right="5.0" />
+                </HBox.margin>
+            </Label>
+            <DatePicker fx:id="pickerEnd" prefWidth="120.0">
+                <HBox.margin>
+                    <Insets right="20.0" />
+                </HBox.margin>
+            </DatePicker>
+            <Button fx:id="btnClearDates" text="Clear Dates" />
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+        </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+             <Label prefWidth="120.0" text="Filter By Department:">
+                 <padding>
+                     <Insets top="4.0" />
+                 </padding>
+                 <HBox.margin>
+                     <Insets right="5.0" />
+                 </HBox.margin>
+             </Label>
+             <ChoiceBox fx:id="choiceDepartments" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></ChoiceBox>
+             <Label prefWidth="80.0" text="Filter By Shift:">
+                   <padding>
+                       <Insets top="4.0" />
+                   </padding>
+                   <HBox.margin>
+                       <Insets right="5.0" />
+                   </HBox.margin>
+               </Label>
+               <ChoiceBox fx:id="choiceShifts" prefWidth="150.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></HBox>
+      <TableView fx:id="tblTurnover" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tblTurnoverColDate" prefWidth="140.0" text="Date" />
+          <TableColumn fx:id="tblTurnoverColDepartment" prefWidth="153.0" text="Department" />
+            <TableColumn fx:id="tblTurnoverColShift" prefWidth="153.0" text="Shift" />
+            <TableColumn fx:id="tblTurnoverColIssues" text="# of Issues" />
+            <TableColumn fx:id="tblTurnoverColDowntime" prefWidth="100.0" text="Downtime" />
+        </columns>
+          <placeholder>
+              <Label>No turnover available</Label>
+          </placeholder>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </TableView>
+    </VBox>
+</AnchorPane>
